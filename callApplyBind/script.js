@@ -26,13 +26,13 @@ Function.prototype.myApply = function(context={}, args=[]){
 
 Function.prototype.myBind = function(context={},args){
     if(typeof this != 'function'){
-        throw new Error("Invalid context! "+this+" is not callable")
+        throw new Error("Could not bind! "+this+" is not callable")
     }
 
     context.fn = this;
 
-    return function(){
-        return context.fn(...args)
+    return function(...newArgs){
+        return context.fn(...args, ...newArgs);
     }
 }
 
