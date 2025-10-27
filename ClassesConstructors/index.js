@@ -65,4 +65,40 @@ ytTeacher1.intro();
 ytTeacher1.totalSubscribers();
 
 ytTeacher.paidCourse(); // Correct way to call static method
-ytTeacher1.paidCourse(); // This will give an error since static methods are not called on instances
+//ytTeacher1.paidCourse(); // This will give an error since static methods are not called on instances
+
+
+//create a class Shape with method area(). Them create subclasses Rectangle and Circle that extend Shape 
+// and implement area() method to calculate area of rectangle and circle respectively.
+
+class Shape{
+    area(){}
+}
+
+class Circle extends Shape{
+    constructor(radius){
+        super();
+        this.radius = radius;
+    }
+
+    area(){
+        return Math.PI * this.radius * this.radius;
+    }
+}
+
+class Square extends Shape{
+    constructor(side){
+        super()
+        this.side = side;
+    }
+
+    area(){
+        return this.side*this.side;
+    }
+}
+
+let cir = new Circle(5);
+let sq = new Square(4);
+
+console.log("cir",cir.area());
+console.log("sq",sq.area());
